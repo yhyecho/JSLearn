@@ -24,7 +24,7 @@ const String = "abc" // 只有 a, b, c 这三个字符
 const boolean1 = true; // true
 const boolean2 = false; // false
 2 > 1; // true
-2 >=3; // false
+2 >= 3; // false
 
 // && 与运算 
 true && true; // 这个&&语句计算结果为true
