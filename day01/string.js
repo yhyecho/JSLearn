@@ -33,3 +33,22 @@ s[13]; // undefined 超出范围的索引不会报错，但一律返回undefined
 var s = 'Test';
 s[0] = 'X';
 alert(s) // s仍然为 'Test'
+
+// 常用方法
+// toUpperCase() 本身不会改变原有字符串，而是返回一个新字符串
+var s = 'Hello';
+s.toUpperCase(); //返回 'HELLO'
+
+// toLowerCase();
+var s = 'Hello';
+var lower = s.toLowerCase(); //返回‘hello’ 并赋值给变量lower
+
+// indexOf 返回指定自字符串出现的位置
+var s = 'hello world';
+s.indexOf('world'); // 返回7
+s.indexOf('World'); // 没有找到指定的字符串， 返回-1;
+
+// substring 返回指定索引区间的子串
+var s = 'hello, world';
+s.substring(0, 5); //从索引0开始，不包括5
+s.substring(7); // 从索引7开始，到结束
