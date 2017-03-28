@@ -54,7 +54,7 @@ var arr = s.split('').map(
     }
 )
 return arr.reduce(
-   function(x,y){
+   function(x, y){
         return (x - 0) * 10 + (y - 0);
     }
 )
