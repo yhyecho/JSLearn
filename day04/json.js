@@ -28,7 +28,8 @@ var xiaoming = {
     skills: ['JavaScript', 'Java', 'Python', 'Lisp']
 };
 
-JSON.stringify(xiaoming); // '{"name":"小明","age":14,"gender":true,"height":1.65,"grade":null,"middle-school":"\"W3C\" Middle School","skills":["JavaScript","Java","Python","Lisp"]}'
+JSON.stringify(xiaoming); 
+// '{"name":"小明","age":14,"gender":true,"height":1.65,"grade":null,"middle-school":"\"W3C\" Middle School","skills":["JavaScript","Java","Python","Lisp"]}'
 
 // 要输出得好看一些，可以加上参数，按缩进输出：
 JSON.stringify(xiaoming, null, '  ');
