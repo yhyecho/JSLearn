@@ -159,3 +159,35 @@ a.off('click', function () {
 
 // 为了实现移除效果，可以使用off('click')一次性移除已绑定的click事件的所有处理函数。
 // 同理，无参数调用off()一次性移除已绑定的所有类型的事件处理函数。
+
+// 事件触发条件
+// 一个需要注意的问题是，事件的触发总是由用户操作引发的。例如，我们监控文本框的内容改动：
+
+var input = $('#test-input');
+input.change(function () {
+    console.log('changed...');
+});
+
+// 当用户在文本框中输入时，就会触发change事件。
+// 但是，如果用JavaScript代码去改动文本框的值，将不会触发change事件：
+var input = $('#test-input');
+input.val('change it!'); // 无法触发change事件
+
+// 有些时候，我们希望用代码触发change事件，可以直接调用无参数的change()方法来触发该事件：
+var input = $('#test-input');
+input.val('change it!');
+input.change(); // 触发change事件
+
+// input.change()相当于input.trigger('change')，它是trigger()方法的简写。
+// 为什么我们希望手动触发一个事件呢？如果不这么做，很多时候，我们就得写两份一模一样的代码。
+
+// 浏览器安全限制
+
+// 在浏览器中，有些JavaScript代码只有在用户触发下才能执行，例如，window.open()函数：
+// 无法弹出新窗口，将被浏览器屏蔽
+$(function () {
+    window.open('/');
+});
+
+// 这些“敏感代码”只能由用户操作来触发：
+
