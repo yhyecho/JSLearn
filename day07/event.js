@@ -190,4 +190,21 @@ $(function () {
 });
 
 // 这些“敏感代码”只能由用户操作来触发：
+var button1 = $('#testPopupButton1');
+var button2 = $('#testPopupButton2');
 
+function popupTestWindow() {
+    window.open('/');
+}
+
+button1.click(function () {
+    popupTestWindow();
+});
+
+button2.click(function () {
+    // 不立刻执行popupTestWindow()，100毫秒后执行:
+    setTimeout(popupTestWindow, 100);
+});
+
+// 当用户点击button1时，click事件被触发，由于popupTestWindow()在click事件处理函数内执行，这是浏览器允许的，
+// 而button2的click事件并未立刻执行popupTestWindow()，延迟执行的popupTestWindow()将被浏览器拦截。
